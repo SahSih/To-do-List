@@ -2,11 +2,13 @@
 //  AppDelegate.swift
 //  ToDoList
 //
-//  Created by XINHAO LI on 5/11/17.
+//  Created by Chris Peng on 3/11/17.
 //  Copyright © 2017 Chris Peng. All rights reserved.
 //
 
 import UIKit
+import Firebase
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        FIRApp.configure()
+
         return true
     }
 
